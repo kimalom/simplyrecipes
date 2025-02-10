@@ -1,0 +1,23 @@
+@import './main/starter';
+@import './components/header';
+@import './components/footer';
+
+.main {
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+  @include mainHeight;
+
+  .wrapper {
+    flex-direction: column;
+    padding-top: 1rem;
+    align-items: center;
+
+    h1 {
+      font-size: 9rem
+    }
+
+    p {
+      @extend h3;
+    }
+  }
+}

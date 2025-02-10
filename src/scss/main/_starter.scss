@@ -1,0 +1,15 @@
+@import '../abstracts/font';
+
+@import '../abstracts/variables';
+@import '../abstracts/extends';
+@import '../abstracts/mixins';
+
+@import '../abstracts/base';
+
+// Wrapper
+.wrapper {
+  width: 90vw;
+  max-width: $max-width;
+  margin: 0 auto;
+  display: flex;
+}

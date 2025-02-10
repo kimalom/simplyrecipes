@@ -1,0 +1,87 @@
+@import './main/starter';
+
+@import './components/footer';
+@import './components/header';
+@import './components/singleRecipe';
+@import './components/recipeContainer';
+
+.main {
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+
+  @include mainHeight;
+
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .contact {
+    display: grid;
+    grid-template-columns: 1fr 450px;
+    justify-content: center;
+    gap: 2rem;
+    align-items: center;
+
+    @media (max-width: 990px) {
+      grid-template-columns: 1fr;
+    }
+
+    h1 {
+      @extend h3;
+    }
+
+    &__form {
+      background: white;
+      max-width: 660px;
+
+      form {
+        padding: 2rem 2.5rem;
+        border-radius: $borderRadius;
+        box-shadow: $shadow-2;
+
+        display: flex;
+        flex-direction: column;
+
+        label {
+          display: block;
+          margin-bottom: .5rem;
+          text-transform: capitalize;
+          font-size: $smallText;
+          letter-spacing: $letterSpacing;
+        }
+
+        input,
+        textarea {
+          width: $full-width;
+          margin-bottom: 1rem;
+          padding: 0.375rem 0.75rem;
+          border-radius: $borderRadius;
+          background-color: $backgroundColor;
+          border: 1px solid $grey-200;
+          resize: vertical;
+        }
+
+        textarea {
+          height: 7rem;
+        }
+
+        button[type="submit"] {
+          @extend %btn;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+
+  .recipe {
+    flex-direction: column;
+    margin-top: 3rem;
+
+    gap: 2rem;
+
+    &>h2 {
+      @extend h5;
+      text-align: center;
+    }
+  }
+}

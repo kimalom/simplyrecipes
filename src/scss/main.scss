@@ -1,0 +1,58 @@
+@import './main/starter';
+
+@import './components/footer';
+@import './components/header';
+@import './components/singleRecipe';
+@import './components/recipeTags';
+@import './components/recipeContainer';
+
+/*
+=============== 
+Main
+===============
+*/
+
+.main {
+  @include mainHeight;
+
+  .wrapper {
+    flex-direction: column;
+    padding-top: 1rem;
+  }
+
+  .hero {
+    @extend %flex-center;
+    color: $white;
+    margin-bottom: 2rem;
+
+    background-image: url('/assets/main.jpeg');
+    height: 40vh;
+    background-size: $full-width;
+    background-position: center;
+
+    h1 {
+      font-size: 4.2rem;
+    }
+
+    p {
+      @extend h4;
+    }
+
+    &__text {
+      text-align: center;
+      height: $full-width;
+      background-color: hsla(0, 0%, 0%, 0.4);
+      width: $full-width;
+      @extend %flex-center;
+      flex-direction: column;
+
+      &>* {
+        margin: 0;
+
+        &:not(:last-child) {
+          margin-bottom: .5rem;
+        }
+      }
+    }
+  }
+}

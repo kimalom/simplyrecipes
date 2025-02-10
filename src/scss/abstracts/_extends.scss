@@ -1,0 +1,43 @@
+// Flexbox center
+%flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Generic Link
+%link {
+  color: $grey-900;
+  transition: $transition;
+
+  &:hover {
+    color: $primary-500;
+  }
+}
+
+// Button
+%btn {
+  cursor: pointer;
+  color: $white;
+  background: $primary-500;
+  border: transparent;
+  border-radius: $borderRadius;
+  letter-spacing: $letterSpacing;
+  padding: 0.375rem 0.75rem;
+  box-shadow: $shadow-1;
+  transition: $transition;
+  text-transform: capitalize;
+  display: inline-block;
+
+  &:hover {
+    background: $primary-700;
+    box-shadow: $shadow-3;
+  }
+}
+
+// Image
+%img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}

@@ -1,0 +1,19 @@
+.footer {
+  background-color: $black;
+  padding: 1rem;
+  @extend %flex-center;
+
+  p {
+    color: white;
+    margin: 0;
+
+    a {
+      @extend %link;
+      color: $primary-500;
+    }
+
+    span {
+      color: $primary-500;
+    }
+  }
+}

@@ -1,0 +1,30 @@
+.recipe {
+  &__tag {
+    h2 {
+      @extend h4;
+      margin-bottom: .5rem;
+    }
+
+    &--list {
+      li {
+        a {
+          @extend %link;
+          color: $grey-500;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 550px) {
+    &__tag {
+      text-align: center;
+
+      &--list {
+        li {
+          padding: .3rem;
+          font-size: 1.25rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,129 @@
+.header {
+  display: flex;
+  height: 6rem;
+
+  .wrapper {
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  &__nav {
+    flex-grow: 1;
+
+    &--list {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      gap: 1rem;
+      font-size: 1.125rem;
+
+      li>a {
+        color: $grey-900;
+        transition: $transition;
+
+        &:hover {
+          color: $primary-500;
+        }
+      }
+
+      div>a {
+        @extend %btn;
+      }
+
+      &>*:last-child {
+        margin-left: auto;
+      }
+    }
+  }
+
+  &__hamburger {
+    order: 1;
+    display: none;
+    cursor: pointer;
+    // display: flex;
+    flex-direction: column;
+    background: $primary-500;
+    gap: 2px;
+    padding: .5rem 0.5rem;
+    border-radius: 4px;
+    transition: $transition;
+    margin-left: auto;
+
+    span {
+      height: 3px;
+      width: 1.5rem;
+      background: $white;
+      border-radius: 4px;
+    }
+
+    &:hover {
+      background: $primary-600;
+    }
+  }
+
+  @media (max-width: 990px) {
+    height: max-content;
+
+    .wrapper {
+      margin-top: 1.5rem;
+    }
+
+    &__hamburger {
+      display: flex;
+      margin-right: 0;
+      margin-left: auto;
+    }
+
+    &__nav {
+      order: 1;
+
+      &.hide-links {
+        height: 0;
+        opacity: 0;
+        position: absolute;
+      }
+
+      &.show-links {
+        position: static;
+        height: 23.9375rem;
+        width: 100%;
+        opacity: 1;
+        transition: $transition;
+
+        .header__nav--list {
+          gap: 0;
+          height: 100%;
+          flex-direction: column;
+          justify-content: start;
+
+          &>* {
+            border-top: 1px solid$grey-500;
+            width: 100%;
+            text-align: center;
+
+            a {
+              display: block;
+              padding: 1rem 0;
+              font-size: 1.25rem;
+            }
+          }
+
+          &>*:last-child {
+            display: flex;
+            justify-content: center;
+            padding-top: .5rem;
+
+            a {
+              width: max-content;
+              padding: .5rem 1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

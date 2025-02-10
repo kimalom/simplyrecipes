@@ -1,0 +1,70 @@
+@import './main/starter';
+
+@import './components/footer';
+@import './components/header';
+@import './components/singleRecipe';
+@import './components/recipeContainer';
+
+/*
+=============== 
+Main
+===============
+*/
+
+.main {
+  @include mainHeight;
+
+  .wrapper {
+    flex-direction: column;
+    padding-top: 1rem;
+  }
+
+  .article {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 400px;
+    gap: 2rem 4rem;
+    align-items: center;
+
+    padding-bottom: 3rem;
+
+    &__text {
+      &>*+* {
+        margin-top: 1.5rem;
+      }
+
+      a {
+        @extend %btn;
+      }
+
+      h1 {
+        @extend h2;
+        line-height: normal;
+      }
+    }
+
+
+    &>img {
+      @extend %img;
+      width: $full-width;
+      height: $full-width;
+      background-position: center;
+      background-size: cover;
+      border-radius: $borderRadius;
+    }
+
+    @media (max-width: 950px) {
+      grid-template-columns: none;
+      grid-template-rows: none;
+
+      img {
+        height: 300px;
+      }
+    }
+  }
+
+  .recipe {
+    flex-direction: column;
+  }
+}

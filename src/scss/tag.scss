@@ -1,0 +1,45 @@
+@import './main/starter';
+@import './components/header';
+@import './components/footer';
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  @include mainHeight;
+
+  .wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+  }
+
+  figure {
+    background: $grey-500;
+    transition: $transition;
+    margin: 0;
+    height: 4.785rem;
+    border-radius: $borderRadius;
+
+    &:hover {
+      background: $primary-500;
+    }
+
+    a {
+      color: $white;
+      @extend %flex-center;
+      flex-direction: column;
+      height: $full-width;
+
+      h2 {
+        @extend h4;
+        margin: 0;
+      }
+
+      p {
+        margin: 0;
+      }
+    }
+  }
+}
